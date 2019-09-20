@@ -22,10 +22,11 @@ else:
 
 # Get the data
 
-big_str = 'name_home,%p_home,gs_home,pe_home,name_away,%p_away,gs_away,pe_away\n'
-
+# big_str = 'name_home,%p_home,gs_home,pe_home,name_away,%p_away,gs_away,pe_away\n'
 
 base_url = 'https://www.premierleague.com/match/'
+
+"""
 match_id = [range(5567, 5947),
 			range(5947, 6327),
 			range(6327, 6707),
@@ -39,6 +40,7 @@ match_id = [range(5567, 5947),
 			range(14040, 14420),
 			range(22342, 22721),
 			range(38308, 38688)]
+"""
 
 """
 for i in match_id[0]:
@@ -50,16 +52,31 @@ for i in match_id[0]:
 match_url = base_url + str(38687)
 response = requests.get(match_url)
 soup = BeautifulSoup(response.text, 'html.parser')
+
+"""
 for x in soup.find_all('div', class_='timeLineContainer'):
-	temp = x.find('a', class_='team').contents[2]
-	print(temp)
+	for y in x.find_all('a', class_='team'):
+		temp = y.contents[2]
+		print(temp)
+"""
+
+"""
+for w in soup.find_all('tbody', class_='matchCentreStatsContainer'):
+	for x in w.find_all('tr'):
+		for y in x.find_all('td'):
+			for z in y.find_all('p'):
+				print(z.contents)
+"""
+
+for x in soup.find_all('tbody', class_='matchCentreStatsContainer'):
+	print(x)			
 
 # Get points earned (pe) for both teams in a given match
 
+"""
 gs_home = 0
 pe_home = 0
 
 gs_away = 0
 pe_away = 0
-
-
+"""
