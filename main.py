@@ -13,7 +13,6 @@ import urllib.request
 
 base_url = 'https://www.premierleague.com/match/'
 
-"""
 match_id = [range(5567, 5947),
 			range(5947, 6327),
 			range(6327, 6707),
@@ -28,10 +27,16 @@ match_id = [range(5567, 5947),
 			range(22342, 22721),
 			range(38308, 38688)]
 
-match_url = base_url + str(i)
-response = requests.get(match_url)
-soup = BeautifulSoup(response.text, 'html.parser')
-"""
+# Loop
+
+for season in match_id:
+	for match in season:
+		match_url = base_url + str(match)
+		"""
+		response = requests.get(match_url)
+		soup = BeautifulSoup(response.text, 'html.parser')
+		"""
+		print(match_url)
 
 # Testing
 
@@ -54,7 +59,8 @@ if not os.path.exists(filename):
 label_str = 'name_home,pp_home,gs_home,pe_home,name_away,pp_away,gs_away,pe_away\n'
 f.write(label_str)
 
-# To do [ ]
+"""
+# To do [  ]
 
 # For each match, do the following:
 	# 1) Get the 3-letter abbreviation for the home team	[OK]
@@ -67,6 +73,8 @@ f.write(label_str)
 	# 8) Get the number of points earned by the away team	[OK]
 	# 9) Append 1,2,3,7,4,5,6,8,newline						[  ]
 
+# Iterate the above actions for each match for each season	[  ]
+"""
 
 # 1) Get the 3-letter abbreviation for the home team	[OK]
 name_home = soup.find('div', class_='teamScore').find_all('a')[0].contents[2][5:8];
