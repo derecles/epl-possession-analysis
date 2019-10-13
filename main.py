@@ -94,7 +94,9 @@ name_home = soup.find('div', class_='teamScore').find_all('a')[0].contents[2][5:
 # Get the dynamically allocated possession figures
 
 driver = webdriver.Chrome()
+# time.sleep(5)
 driver.get('https://www.premierleague.com/match/38687')
+# time.sleep(5)
 
 # Testing
 
@@ -103,12 +105,24 @@ match_url = base_url + str(38687)
 response = requests.get(match_url)
 """
 
-soup = BeautifulSoup(driver.page_source, 'html.parser')
-# elem = soup.find_all('li', class_='active')
-# elem = soup.findElement(By.XPATH('//li[@data-tab-index="2"]'))
-elem = driver.find_element_by_css_selector('li[data-tab-index="2"]')
-# elem.click()
-print(elem)
+# soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+"""
+Fetch 'Stats' element in mini navbar ("tabLink matchNav")
+Click on 'Stats' element (data-tab-index="2")
+Fetch possession figures
+"""
+
+click = driver.find_element_by_xpath("//li[@data-tab-index='2']").click()
+
+# click again on 'Match Stats' in order for stats to be rendered?
+
+parent = driver.find_element_by_xpath("//tbody[@class='matchCentreStatsContainer']")
+# parent.clear()
+parent.send_keys('temp')
+parent.send_keys(Keys.RETURN)
+print(parent)
+
 
 """
 f.write(pp_home)
