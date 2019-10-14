@@ -5,8 +5,6 @@ possession per match and their average match outcome.
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
 import os
 import requests
@@ -33,7 +31,7 @@ match_id = [range(5567, 5947),
 			range(38308, 38688)]
 """
 
-# Loop
+# Loop [  ]
 
 """
 for season in match_id:
@@ -46,7 +44,6 @@ for season in match_id:
 
 # Create a new file [OK]
 
-"""
 filename = 'epl_data.csv'
 
 if os.path.exists(filename):
@@ -54,98 +51,36 @@ if os.path.exists(filename):
 
 if not os.path.exists(filename):
 	f = open(filename, 'a+')
-"""
 
 # Append the column labels [OK]
 
-"""
 label_str = 'name_home,pp_home,gs_home,pe_home,name_away,pp_away,gs_away,pe_away\n'
 f.write(label_str)
-"""
 
-"""
-# To do [  ]
+# Test single single match (38687)
 
-# For each match, do the following:
-	# 1) Get the 3-letter abbreviation for the home team	[OK]
-	# 2) Get the % possession value for the home team
-	# 3) Get the number of goals scored by the home team	[OK]
-	# 4) Get the 3-letter abbrevation for the away team		[OK]
-	# 5) Get the % possession value for the away team
-	# 6) Get the number of goals scored by the away team	[OK]
-	# 7) Get the number of points earned by the home team	[OK]
-	# 8) Get the number of points earned by the away team	[OK]
-	# 9) Append 1,2,3,7,4,5,6,8,newline						[  ]
-
-# Iterate the above actions for each match for each season	[  ]
-"""
-
-"""
-# 1) Get the 3-letter abbreviation for the home team	[OK]
-name_home = soup.find('div', class_='teamScore').find_all('a')[0].contents[2][5:8];
-"""
-
-# 2) Get the % possession value for the home team		[  ]
-
-# Use selenium webdriver to get data from dynamically generated HTML table
-# Dynamically generated table contains % possession data
-# https://stackoverflow.com/questions/17597424/how-to-retrieve-the-values-of-dynamic-html-content-using-python
-# https://stackoverflow.com/questions/13960326/how-can-i-parse-a-website-using-selenium-and-beautifulsoup-in-python
-# Get the dynamically allocated possession figures
-
-driver = webdriver.Chrome()
-# time.sleep(5)
-driver.get('https://www.premierleague.com/match/38687')
-# time.sleep(5)
-
-# Testing
-
-"""
 match_url = base_url + str(38687)
 response = requests.get(match_url)
-"""
+soup = BeautifulSoup(response.text, 'html.parser')
 
-# soup = BeautifulSoup(driver.page_source, 'html.parser')
+# Get the 3-letter abbreviation for the home team [OK]
 
-"""
-Fetch 'Stats' element in mini navbar ("tabLink matchNav")
-Click on 'Stats' element (data-tab-index="2")
-Fetch possession figures
-"""
+name_home = soup.find('div', class_='teamScore').find_all('a')[0].contents[2][5:8]
 
-click_stats = driver.find_element_by_xpath("//li[contains(text(),'Stats')]").click()
-click_match_stats = driver.find_element_by_xpath("//li[contains(text(),'Match Stats')]").click()
+# Get the 3-letter abbrevation for the away team [OK]
 
-# parent = driver.find_element_by_xpath("//tbody[@class='matchCentreStatsContainer']")
-# parent = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody")
-# parent = driver.find_element_by_xpath("//*[@id='mainContent']/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody")
-print(parent.text)
+name_away = soup.find('div', class_='teamScore').find_all('a')[1].contents[0][5:8]
 
-"""
-f.write(pp_home)
-f.write(",")
-"""
+# Get the number of goals scored by the home team [OK]
 
-"""
-# 3) Get the number of goals scored by the home team	[OK]
 gs_home = soup.find('div', class_='score').contents[0]
-"""
 
-"""
-# 4) Get the 3-letter abbrevation for the away team		[OK]
-name_away = soup.find('div', class_='teamScore').find_all('a')[1].contents[0][5:8];
-"""
+# Get the number of goals scored by the away team [OK]
 
-# 5) Get the % possession value for the away team		[  ]
-
-
-"""
-# 6) Get the number of goals scored by the away team	[OK]
 gs_away = soup.find('div', class_='score').contents[2]
-"""
 
-"""
-# 7) Get the number of points earned by the home team	[OK]
+# Get the number of points earned by the home team [OK]
+
 pe_home = 0
 if (gs_home > gs_away):
 	pe_home = 3
@@ -154,7 +89,8 @@ elif (gs_home == gs_away):
 else:
 	pe_home = 0
 
-# 8) Get the number of points earned by the away team	[OK]
+# Get the number of points earned by the away team [OK]
+
 pe_away = 0
 if (gs_away > gs_home):
 	pe_away = 3
@@ -162,29 +98,47 @@ elif (gs_away == gs_home):
 	pe_away = 1
 else:
 	pe_away = 0
-"""
 
+# Initialize new browser instance [OK]
 
-# 9) Append 1,2,3,7,4,5,6,8,newline						[ ]
+driver = webdriver.Chrome()
+driver.get('https://www.premierleague.com/match/38687')
 
-"""
+# Simulate two click events in order to generate dynamic HTML [OK]
+
+click_stats = driver.find_element_by_xpath("//li[contains(text(),'Stats')]").click()
+click_match_stats = driver.find_element_by_xpath("//li[contains(text(),'Match Stats')]").click()
+time.sleep(2)
+
+# Get the % possession value for the home team [OK]
+
+pp_home = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[1]/p").text
+
+# Get the % possession value for the away team [OK]
+
+pp_away = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[3]/p").text
+
+# Terminate new browser instance [OK]
+
+driver.quit()
+
+# Append 1,2,3,7,4,5,6,8,newline [OK]
+
 f.write(name_home)
-f.write(",")
-
+f.write(',')
+f.write(pp_home)
+f.write(',')
 f.write(gs_home)
-f.write(",")
-
+f.write(',')
 f.write(str(pe_home))
-f.write(",")
-
+f.write(',')
 f.write(name_away)
-f.write(",")
-
+f.write(',')
+f.write(pp_away)
+f.write(',')
 f.write(gs_away)
-f.write(",")
-
+f.write(',')
 f.write(str(pe_away))
-f.write("\n")
+f.write('\n')
 
 f.close()
-"""
