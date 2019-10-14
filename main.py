@@ -113,16 +113,13 @@ Click on 'Stats' element (data-tab-index="2")
 Fetch possession figures
 """
 
-click = driver.find_element_by_xpath("//li[@data-tab-index='2']").click()
+click_stats = driver.find_element_by_xpath("//li[contains(text(),'Stats')]").click()
+click_match_stats = driver.find_element_by_xpath("//li[contains(text(),'Match Stats')]").click()
 
-# click again on 'Match Stats' in order for stats to be rendered?
-
-parent = driver.find_element_by_xpath("//tbody[@class='matchCentreStatsContainer']")
-# parent.clear()
-parent.send_keys('temp')
-parent.send_keys(Keys.RETURN)
-print(parent)
-
+# parent = driver.find_element_by_xpath("//tbody[@class='matchCentreStatsContainer']")
+# parent = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody")
+# parent = driver.find_element_by_xpath("//*[@id='mainContent']/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody")
+print(parent.text)
 
 """
 f.write(pp_home)
