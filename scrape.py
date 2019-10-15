@@ -48,25 +48,23 @@ def append_match_stats(match, f):
 	driver = webdriver.Chrome()
 	driver.get(match)
 
-	try:
-		wait = WebDriverWait(driver, 5)
-		wait_first_click = wait.until(EC.element_to_be_clickable((By.XPATH, xpath_stats)))
-		wait_second_click = wait.until(EC.element_to_be_clickable((By.XPATH, xpath_match_stats)))
-		ensure_pp_home = wait.until(EC.text_to_be_present_in_element((By.XPATH, xpath_pp_home)))
-		ensure_pp_away = wait.until(EC.text_to_be_present_in_element((By.XPATH, xpath_pp_away)))
-		ensure_match_date = wait.until(EC.text_to_be_present_in_element((By.XPATH, xpath_match_date)))
+	time.sleep(3)
 
-		click_stats = driver.find_element_by_xpath(xpath_stats).click()
-		click_match_stats = driver.find_element_by_xpath(xpath_match_stats).click()
+	click_stats = driver.find_element_by_xpath(xpath_stats).click()
 
-		pp_home = driver.find_element_by_xpath(xpath_pp_home).text
-		pp_away = driver.find_element_by_xpath(xpath_pp_away).text
+	time.sleep(1)
 
-		match_date = driver.find_element_by_xpath(xpath_match_date).text
-		match_date = datetime.datetime.strptime(match_date[4:], '%d %b %Y').strftime('%d/%m/%Y')
+	click_match_stats = driver.find_element_by_xpath(xpath_match_stats).click()
 
-	finally:
-		driver.quit()
+	time.sleep(3)
+
+	pp_home = driver.find_element_by_xpath(xpath_pp_home).text
+	pp_away = driver.find_element_by_xpath(xpath_pp_away).text
+
+	match_date = driver.find_element_by_xpath(xpath_match_date).text
+	match_date = datetime.datetime.strptime(match_date[4:], '%d %b %Y').strftime('%d/%m/%Y')
+
+	driver.quit()
 
 	f.write(name_home)
 	f.write(',')
@@ -87,10 +85,8 @@ def append_match_stats(match, f):
 	f.write(str(match_date))
 	f.write('\n')
 
-
 if __name__ == '__main__':
 
-	# Create the csv file and append labels
 	filename = 'epl_data.csv'
 	if os.path.exists(filename):
 		os.remove(filename)
@@ -101,7 +97,8 @@ if __name__ == '__main__':
 
 	base_url = 'https://www.premierleague.com/match/'
 
-	# Each range represents all 380 matches per season, starting with 06/07 until 18/19
+	# EPL does not use any particular system for distributing match IDs
+	# Each range represents all 380 matches in a given season, starting with 06/07 at index 0 until 18/19 at index 12
 	match_id = [range(5567, 5947),
 				range(5947, 6327),
 				range(6327, 6707),
@@ -122,82 +119,3 @@ if __name__ == '__main__':
 			append_match_stats(base_url + str(match), f)
 
 	f.close()
-
-"""
-# Get the 3-letter abbreviation for the home team [OK]
-name_home = soup.find('div', class_='teamScore').find_all('a')[0].contents[2][5:8]
-
-# Get the 3-letter abbrevation for the away team [OK]
-name_away = soup.find('div', class_='teamScore').find_all('a')[1].contents[0][5:8]
-
-# Get the number of goals scored by the home team [OK]
-gs_home = soup.find('div', class_='score').contents[0]
-
-# Get the number of goals scored by the away team [OK]
-gs_away = soup.find('div', class_='score').contents[2]
-
-# Get the number of points earned by the home team [OK]
-pe_home = 0
-if (gs_home > gs_away):
-	pe_home = 3
-elif (gs_home == gs_away):
-	pe_home = 1
-else:
-	pe_home = 0
-
-# Get the number of points earned by the away team [OK]
-pe_away = 0
-if (gs_away > gs_home):
-	pe_away = 3
-elif (gs_away == gs_home):
-	pe_away = 1
-else:
-	pe_away = 0
-
-# Initialize new browser instance [OK]
-driver = webdriver.Chrome()
-driver.get('https://www.premierleague.com/match/38687')
-
-# Simulate two click events in order to generate dynamic HTML [OK]
-click_stats = driver.find_element_by_xpath("//li[contains(text(),'Stats')]").click()
-click_match_stats = driver.find_element_by_xpath("//li[contains(text(),'Match Stats')]").click()
-time.sleep(3)
-
-# Get the % possession value for the home team [OK]
-pp_home = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[1]/p").text
-
-# Get the % possession value for the away team [OK]
-pp_away = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[3]/p").text
-
-# Get the match date
-match_date = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/section/div[1]/div/div[1]/div[1]").text
-match_date = datetime.datetime.strptime(match_date[4:], '%d %b %Y').strftime('%d/%m/%Y')
-
-# Terminate new browser instance [OK]
-driver.quit()
-"""
-
-"""
-# Append 1,2,3,7,4,5,6,8,newline [OK]
-
-f.write(name_home)
-f.write(',')
-f.write(pp_home)
-f.write(',')
-f.write(gs_home)
-f.write(',')
-f.write(str(pe_home))
-f.write(',')
-f.write(name_away)
-f.write(',')
-f.write(pp_away)
-f.write(',')
-f.write(gs_away)
-f.write(',')
-f.write(str(pe_away))
-f.write(',')
-f.write(str(match_date))
-f.write('\n')
-
-f.close()
-"""
