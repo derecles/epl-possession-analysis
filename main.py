@@ -6,6 +6,7 @@ possession per match and their average match outcome.
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
+import datetime
 import os
 import requests
 import time
@@ -54,7 +55,7 @@ if not os.path.exists(filename):
 
 # Append the column labels [OK]
 
-label_str = 'name_home,pp_home,gs_home,pe_home,name_away,pp_away,gs_away,pe_away\n'
+label_str = 'name_home,pp_home,gs_home,pe_home,name_away,pp_away,gs_away,pe_away,match_date\n'
 f.write(label_str)
 
 # Test single single match (38687)
@@ -118,6 +119,11 @@ pp_home = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2
 
 pp_away = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[3]/p").text
 
+# Get the match date
+
+match_date = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/section/div[1]/div/div[1]/div[1]").text
+match_date = datetime.datetime.strptime(match_date[4:], '%d %b %Y').strftime('%d/%m/%Y')
+
 # Terminate new browser instance [OK]
 
 driver.quit()
@@ -139,6 +145,8 @@ f.write(',')
 f.write(gs_away)
 f.write(',')
 f.write(str(pe_away))
+f.write(',')
+f.write(str(match_date))
 f.write('\n')
 
 f.close()
