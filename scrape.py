@@ -5,6 +5,9 @@ possession per match and their average match outcome.
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 import datetime
 import os
@@ -36,20 +39,34 @@ def append_match_stats(match, f):
 	else:
 		pe_away = 0
 
+	xpath_stats = "//li[contains(text(),'Stats')]"
+	xpath_match_stats = "//li[contains(text(),'Match Stats')]"
+	xpath_pp_home = "/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[1]/p"
+	xpath_pp_away = "/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[3]/p"
+	xpath_match_date = "/html/body/main/div/section/div[2]/section/div[1]/div/div[1]/div[1]"
+
 	driver = webdriver.Chrome()
-	driver.get(match_url)
+	driver.get(match)
 
-	click_stats = driver.find_element_by_xpath("//li[contains(text(),'Stats')]").click()
-	click_match_stats = driver.find_element_by_xpath("//li[contains(text(),'Match Stats')]").click()
-	time.sleep(3)
+	try:
+		wait = WebDriverWait(driver, 5)
+		wait_first_click = wait.until(EC.element_to_be_clickable((By.XPATH, xpath_stats)))
+		wait_second_click = wait.until(EC.element_to_be_clickable((By.XPATH, xpath_match_stats)))
+		ensure_pp_home = wait.until(EC.text_to_be_present_in_element((By.XPATH, xpath_pp_home)))
+		ensure_pp_away = wait.until(EC.text_to_be_present_in_element((By.XPATH, xpath_pp_away)))
+		ensure_match_date = wait.until(EC.text_to_be_present_in_element((By.XPATH, xpath_match_date)))
 
-	pp_home = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[1]/p").text
-	pp_away = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[3]/p").text
+		click_stats = driver.find_element_by_xpath(xpath_stats).click()
+		click_match_stats = driver.find_element_by_xpath(xpath_match_stats).click()
 
-	match_date = driver.find_element_by_xpath("/html/body/main/div/section/div[2]/section/div[1]/div/div[1]/div[1]").text
-	match_date = datetime.datetime.strptime(match_date[4:], '%d %b %Y').strftime('%d/%m/%Y')
+		pp_home = driver.find_element_by_xpath(xpath_pp_home).text
+		pp_away = driver.find_element_by_xpath(xpath_pp_away).text
 
-	driver.quit()
+		match_date = driver.find_element_by_xpath(xpath_match_date).text
+		match_date = datetime.datetime.strptime(match_date[4:], '%d %b %Y').strftime('%d/%m/%Y')
+
+	finally:
+		driver.quit()
 
 	f.write(name_home)
 	f.write(',')
