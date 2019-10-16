@@ -3,6 +3,10 @@ This script creates a csv file that contains data on EPL teams' average percenta
 possession per match and their average match outcome.
 """
 
+# Error: Max retries exceeded with url: /match/6229
+# NewConnectionError: Failed to establish a new connection
+# [Errno 8] nodename nor servname provided, or not known
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
@@ -13,6 +17,7 @@ import time
 import urllib.request
 
 def append_match_stats(match, f):
+	print('Processing match: {}...'.format(str(match)[35:]))
 	response = requests.get(match)
 	soup = BeautifulSoup(response.text, 'html.parser')
 	name_home = soup.find('div', class_='teamScore').find_all('a')[0].contents[2][5:8]
@@ -82,10 +87,16 @@ def append_match_stats(match, f):
 	f.write(',')
 	f.write(str(match_date))
 	f.write('\n')
+	print('...done.')
 
 if __name__ == '__main__':
 
 	filename = 'epl_data.csv'
+
+	"""
+
+	# Don't touch this commented block unless you want to erase the csv and start from scratch!
+
 	if os.path.exists(filename):
 		os.remove(filename)
 	if not os.path.exists(filename):
@@ -93,13 +104,19 @@ if __name__ == '__main__':
 	label_str = 'name_home,pp_home,gs_home,pe_home,name_away,pp_away,gs_away,pe_away,match_date\n'
 	f.write(label_str)
 
+	"""
+
+	if os.path.exists(filename):
+		f = open(filename, 'a+')
+
 	base_url = 'https://www.premierleague.com/match/'
 
 	# EPL does not use any particular system for distributing match IDs
 	# Each range represents all 380 matches in a given season, starting with 06/07 at index 0 until 18/19 at index 12
-	match_id = [range(5567, 5947),
-				range(5947, 6327),
-				range(6327, 6707),
+	match_id = [# range(5567, 5947),
+				# range(5947, 6327),
+				# range(6327, 6707),
+				range(6555, 6707),
 				range(6707, 7087),
 				range(7087, 7467),
 				range(7467, 7847),
