@@ -3,9 +3,12 @@ This script creates a csv file that contains data on EPL teams' average percenta
 possession per match and their average match outcome.
 """
 
+# [RESOLVED: Network connection issue]
 # Error: Max retries exceeded with url: /match/6229
 # NewConnectionError: Failed to establish a new connection
-# [Errno 8] nodename nor servname provided, or not known
+# Errno 8: nodename nor servname provided, or not known
+
+# Error: NoneType for soup object at /match/6556
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
