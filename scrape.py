@@ -13,7 +13,7 @@ import time
 import urllib.request
 
 def append_match_stats(match, f):
-	print('Processing match: {}...'.format(str(match)[35:]))
+	print('Processing match: {}...'.format(str(match)[36:]))
 	response = requests.get(match)
 	soup = BeautifulSoup(response.text, 'html.parser')
 	name_home = soup.find('div', class_='teamScore').find_all('a')[0].contents[2][5:8]
