@@ -37,8 +37,8 @@ def append_match_stats(match, f):
 	else:
 		pe_away = 0
 
-	xpath_stats = "//li[contains(text(),'Stats')]"
-	xpath_match_stats = "//li[contains(text(),'Match Stats')]"
+	xpath_stats = "/html/body/main/div/section/div[2]/div[2]/div[1]/div/div/ul/li[3]"
+	xpath_match_stats = "/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[1]/ul/ul/li[2]"
 	xpath_pp_home = "/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[1]/p"
 	xpath_pp_away = "/html/body/main/div/section/div[2]/div[2]/div[2]/section[3]/div[2]/div[2]/table/tbody/tr[1]/td[3]/p"
 	xpath_match_date = "/html/body/main/div/section/div[2]/section/div[1]/div/div[1]/div[1]"
@@ -85,14 +85,14 @@ def append_match_stats(match, f):
 	f.write('\n')
 	print('...done.')
 
+"""
 if __name__ == '__main__':
 
 	filename = 'epl_data.csv'
 
-	"""
-	if os.path.exists(filename):
-		os.remove(filename)
-	"""
+	# if os.path.exists(filename):
+		# os.remove(filename)
+
 	if not os.path.exists(filename):
 		f = open(filename, 'a+')
 	label_str = 'name_home,pp_home,gs_home,pe_home,name_away,pp_away,gs_away,pe_away,match_date\n'
@@ -122,3 +122,4 @@ if __name__ == '__main__':
 			append_match_stats(base_url + str(match), f)
 
 	f.close()
+"""
