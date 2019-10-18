@@ -3,13 +3,6 @@ This script creates a csv file that contains data on EPL teams' average percenta
 possession per match and their average match outcome.
 """
 
-# [RESOLVED: Network connection issue]
-# Error: Max retries exceeded with url: /match/6229
-# NewConnectionError: Failed to establish a new connection
-# Errno 8: nodename nor servname provided, or not known
-
-# Error: NoneType for soup object at /match/6556
-
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
@@ -116,15 +109,14 @@ if __name__ == '__main__':
 
 	# EPL does not use any particular system for distributing match IDs
 	# Each range represents all 380 matches in a given season, starting with 06/07 at index 0 until 18/19 at index 12
-	match_id = [# range(5567, 5947),
-				# range(5947, 6327),
-				# range(6327, 6707),
-				# range(6707, 7087),
-				# range(7087, 7467),
-				# range(7467, 7847),
-				# range(7864, 8244),
-				# range(9231, 9611),
-				range(9292, 9611),
+	match_id = [range(5567, 5947),
+				range(5947, 6327),
+				range(6327, 6707),
+				range(6707, 7087),
+				range(7087, 7467),
+				range(7467, 7847),
+				range(7864, 8244),
+				range(9231, 9611),
 				range(9611, 9991),
 				range(12115, 12495),
 				range(14040, 14420),
