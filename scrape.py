@@ -90,20 +90,13 @@ if __name__ == '__main__':
 	filename = 'epl_data.csv'
 
 	"""
-
-	# Don't touch this commented block unless you want to erase the csv and start from scratch!
-
 	if os.path.exists(filename):
 		os.remove(filename)
+	"""
 	if not os.path.exists(filename):
 		f = open(filename, 'a+')
 	label_str = 'name_home,pp_home,gs_home,pe_home,name_away,pp_away,gs_away,pe_away,match_date\n'
 	f.write(label_str)
-
-	"""
-
-	if os.path.exists(filename):
-		f = open(filename, 'a+')
 
 	base_url = 'https://www.premierleague.com/match/'
 
