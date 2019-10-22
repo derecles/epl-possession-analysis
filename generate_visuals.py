@@ -68,10 +68,21 @@ for team, dataset in teams.items():
 
 	pp_pe[avg_pp] = avg_pe
 
-full = pd.DataFrame(list(pp_pe.items()), columns=['avg_pp', 'avg_pe'])
+x = np.array(list(pp_pe.keys())).reshape((-1, 1))
+y = np.array(list(pp_pe.values()))
+model = LinearRegression().fit(x,y)
+y_pred = model.predict(x)
+slope = model.coef_
+intercept = model.intercept_
+r_sq = model.score(x, y)
 
-full.plot(x='avg_pp', y='avg_pe', style='o')
+print('y={:.3f}x{:.3f}'.format(slope[0], intercept))
+print('R^2:', r_sq)
+
+plt.scatter(x, y)
+plt.plot(x, y_pred, color='red', label='HELLO')
 plt.title('Average possession versus match outcomes')
 plt.xlabel('Average possession percentage per match (avg_pp)')
 plt.ylabel('Average points earned per match (avg_pe)')
 plt.show()
+
