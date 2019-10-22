@@ -76,7 +76,7 @@ slope = model.coef_
 intercept = model.intercept_
 r_sq = model.score(x, y)
 
-print('y={:.3f}x{:.3f}'.format(slope[0], intercept))
+print('y={:.4f}x{:.4f}'.format(slope[0], intercept))
 print('R^2:', r_sq)
 
 plt.scatter(x, y)
