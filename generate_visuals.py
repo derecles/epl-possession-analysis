@@ -76,12 +76,12 @@ slope = model.coef_
 intercept = model.intercept_
 r_sq = model.score(x, y)
 
-print('y={:.4f}x{:.4f}'.format(slope[0], intercept))
-print('R^2:', r_sq)
+print('R-squared:', r_sq)
 
 plt.scatter(x, y)
-plt.plot(x, y_pred, color='red', label='HELLO')
-plt.title('Average possession versus match outcomes')
-plt.xlabel('Average possession percentage per match (avg_pp)')
-plt.ylabel('Average points earned per match (avg_pe)')
+plt.plot(x, y_pred, color='red', label='y={:.4f}x{:.4f}'.format(slope[0], intercept))
+plt.title('Possession versus match outcomes')
+plt.xlabel('Average possession percentage per match')
+plt.ylabel('Average points earned per match')
+plt.legend()
 plt.show()
