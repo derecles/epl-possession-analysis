@@ -3,6 +3,7 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import statsmodels.api as sm
 
 if __name__=='__main__':
 	path = 'epl_data.csv'
@@ -74,6 +75,9 @@ if __name__=='__main__':
 	intercept = model.intercept_
 	r_sq = model.score(x, y)
 
+	results = sm.OLS(y, x).fit()
+	print(results.summary())
+	"""
 	print('R-squared:', r_sq)
 
 	plt.scatter(x, y)
@@ -83,3 +87,4 @@ if __name__=='__main__':
 	plt.ylabel('Average points earned per match')
 	plt.legend()
 	plt.show()
+	"""
