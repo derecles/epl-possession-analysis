@@ -4,7 +4,7 @@ In a given football match, is having more possession associated with an improved
 
 ## Overview
 
-I have analyzed all matches in the [English Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19.
+I have analyzed all matches in the [Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19.
 
 2006/07 is the earliest season for which possession figures are available on the Premier League website.
 
@@ -19,17 +19,17 @@ There are 3 potential outcomes to each match:
 ---------------------------------------------------------------------------------------------------
 | Team A scores more goals than Team B             | Team A earns 3 points; Team B earns 0 points |
 ---------------------------------------------------------------------------------------------------
-| Team B scores more goals than Team A             | Team B earns 3 points; Team A earns 0 points |
+| Team B scores more goals than Team A             | Team A earns 0 points; Team B earns 3 points |
 ---------------------------------------------------------------------------------------------------
 | Team A and Team B score the same number of goals | Team A earns 1 point;  Team B earns 1 point  |
 ---------------------------------------------------------------------------------------------------
 ```
 
 For each team, I have plotted the following:
-- Independent variable: Average possession per match across all matches in all seasons
-- Dependent variable: Average points earned across all matches in all seasons as the dependent variable
+- Independent variable: A team's average possession per match across all matches
+- Dependent variable: A team's average points earned across all matches
 
-A single data point represents a single team.
+Each data point represents a single team.
 
 I performed this analysis using three separate tools: Python, R, and Google Sheets. I was able to draw a comparable regression line (within a margin of error) using each tool independently.
 
@@ -37,7 +37,7 @@ I performed this analysis using three separate tools: Python, R, and Google Shee
 
 **The script scrape.py is not going to stop until it has successfully completed, it is manually interrupted, or there is a network error during execution. As a result of explicit waits, this script will take at least 9.5 hours to complete and will repeatedly open and close Chrome instances. If the script is interrupted, the csv file will be deleted and re-created upon the next run.**
 
-In order to scrape the data, you need to have [Selenium WebDriver](https://www.seleniumhq.org/) for Python. Once you are ready, run the following command in the cloned repo:
+In order to scrape the data, you need to have [Selenium WebDriver](https://www.seleniumhq.org/) for Python installed. Once you are ready, run the following command in the cloned repo:
 
 ```
 python3 scrape.py
@@ -71,4 +71,4 @@ This is going to create a csv file that contains the data to be analyzed. These 
 
 There are 20 teams that play in a given season.
 
-There are more than 20 data points because after each season, the English Premier League relegates the three teams with the fewest points earned to the [2nd tier](https://www.efl.com/) of English football in the following season. The three teams from the 2nd tier that earned the most points in the 2nd tier are then promoted to the Premier League the following season.
+There are more than 20 data points because after each season, the Premier League relegates the three teams with the fewest points earned down to the [2nd tier](https://www.efl.com/) in the following season. The three teams from the 2nd tier that earned the most points in the 2nd tier are then promoted up to the Premier League the following season.
