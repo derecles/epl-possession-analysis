@@ -64,7 +64,25 @@ This is going to create a csv file that contains the data to be analyzed. These 
 -----------------------------------------------------------
 | pe_away   | The points earned by the away team          |
 -----------------------------------------------------------
+```
 
+There are 4940 total matches to be scraped, so there should be 4941 rows in the csv file (including the column labels). The csv included in this repo only has 4940 rows. I don't know where the missing match is, but I don't want to run the script all over again. I will find the match and manually add it.
+
+## Analyzing the data
+
+In order to see a regression line drawn using Python, run this command:
+```
+python3 generate_visuals.py
+```
+
+In order to see a regression line drawn using R, use [RStudio](https://rstudio.com/) to open and run this R script:
+```
+generate_visuals.R
+```
+
+In order to see ra regression line drawn using Google Sheets, open this pdf:
+```
+excel_visual.pdf
 ```
 
 ## Things to note
