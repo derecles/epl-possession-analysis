@@ -26,12 +26,12 @@ There are 3 potential outcomes to a match based on the number of goals scored by
 ```
 
 For each team, I have plotted the following:
-- Independent variable: A given team's average possession percentage of the ball per match across all matches
-- Dependent variable: A given team's average points earned per match across all matches
+- Independent variable: The given team's average possession percentage of the ball per match across all matches
+- Dependent variable: The given team's average points earned per match across all matches
 
 Each data point represents a single team.
 
-I performed this analysis using three separate tools: Python, R, and Google Sheets. I was able to draw the same regression line (within a tight margin of error) using each tool independently.
+I performed the analysis using three separate tools: Python, R, and Google Sheets. I was able to draw the same regression line (within a tight margin of error) using each tool independently.
 
 ## Scraping the data
 
