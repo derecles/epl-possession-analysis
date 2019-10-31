@@ -108,5 +108,6 @@ Possession percentage for Team A = Passes completed by Team A / (Passes complete
 
 ## To do
 
-- [ ] Analyze on a per-season basis (20 data points per plot, one plot for each of the 13 seasons)
-- [ ] Analyze on a per-team basis (one data point == one season, one plot for each of the 39 teams that have played in the Premier League since possession figures have been tracked)
+- [x] Analyze on a fully-aggregated basis (one plot, 39 data points)
+- [ ] Analyze on a per-season basis (13 plots, 20 data points per plot)
+- [ ] Analyze on a per-team basis (39 plots, variable number of data points per plot)
