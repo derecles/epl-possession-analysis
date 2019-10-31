@@ -1,6 +1,6 @@
 # epl-possession-analysis
 
-In a given football (soccer) match, is having more possession associated with an improved match outcome?
+In a given football (soccer) match, is having more possession of the ball associated with an improved match outcome?
 
 ## Overview
 
@@ -95,9 +95,8 @@ excel_calculations.pdf
 
 ## Things to note
 
-- There are 20 teams that play in a given season.
-  - There are more than 20 data points because after each season, the Premier League relegates the three teams with the fewest points earned down to the [2nd tier](https://www.efl.com/) in the following season. The three teams from the 2nd tier that earned the most points in the 2nd tier are then promoted up to the Premier League the following season.
-There are 4940 total matches to be scraped, so there should be 4941 rows in the csv file (including the column labels). The csv included in this repo only has 4940 rows. I don't know where the missing match is, but I don't want to run the script all over again. I will find the match and manually add it.
+There are 20 teams that play in a given season. There are more than 20 data points because after each season, the Premier League relegates the three teams with the fewest points earned down to the [2nd tier](https://www.efl.com/) in the following season. The three teams from the 2nd tier that earned the most points in the 2nd tier are then promoted up to the Premier League the following season.
+
 In order to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
 ```
 sqlite_epl_data.db
