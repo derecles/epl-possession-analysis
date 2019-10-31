@@ -94,8 +94,7 @@ excel_calculations.pdf
 
 ## Things to note
 
-- It is possible that at some point between the 2006/07 season and the 2018/19 season, the Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would be unlikely to have a statistically significant impact. Additionally, if there _was_ a change, I wasn't able to find an announcement on their website.
-FYI: you can approximate the possession percentage for Team A playing in a given match as follows:
+- It is possible that at some point between the 2006/07 season and the 2018/19 season, the Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would be unlikely to have a statistically significant impact. Additionally, if there _was_ a change, I wasn't able to find an announcement on their website. FYI: you can approximate the possession percentage for Team A playing in a given match as follows:
   ```
   Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
   ```
