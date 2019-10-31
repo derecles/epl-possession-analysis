@@ -1,6 +1,6 @@
 # epl-possession-analysis
 
-In a given football (soccer) match, is having more possession of the ball associated with an improved match outcome?
+In a given football (soccer) match, is there a relationship between a team's possession of the ball and the match outcome?
 
 ## Overview
 
@@ -10,7 +10,7 @@ I have analyzed all of the matches played in the [Premier League](https://www.pr
 
 ## Methodology
 
-I have defined a match outcome as the points earned by a given team in a given match.
+I defined a match outcome as the points earned by a given team in a given match. See [here](https://en.wikipedia.org/wiki/Premier_League#Competition_format) for more.
 
 There are 3 potential outcomes to a match based on the number of goals scored by each team:
 ```
@@ -31,7 +31,7 @@ For each team, I have plotted the following:
 
 Each data point represents a single team.
 
-I performed the analysis using three separate tools: Python, R, and Google Sheets. I was able to draw the same regression line (within a tight margin of error) using each tool independently.
+I then drew a regression line using three separate tools: Python, R, and Google Sheets. I arrived at similar regression equations (within a tight margin of error) using each tool independently.
 
 ## Scraping the data
 
