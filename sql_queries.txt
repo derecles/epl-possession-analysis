@@ -1,1 +1,5 @@
 SELECT COUNT(*) FROM (SELECT DISTINCT name_home FROM epl_data) AS temp;
+SELECT name_home, AVG(pp_home) FROM epl_data GROUP BY name_home ORDER BY name_home;
+SELECT name_away, AVG(pp_away) FROM epl_data GROUP BY name_away ORDER BY name_away;
+SELECT name_home, AVG(pe_home) FROM epl_data GROUP BY name_home ORDER BY name_home;
+SELECT name_away, AVG(pe_away) FROM epl_data GROUP BY name_away ORDER BY name_away;

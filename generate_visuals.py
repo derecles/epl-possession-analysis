@@ -51,7 +51,7 @@ if __name__=='__main__':
 		'WOL': dataset[(dataset.name_home == 'WOL') | (dataset.name_away == 'WOL')]
 	}
 
-	pp_pe = {}
+	all_pp_pe = {}
 
 	for team, dataset in teams.items():
 		name_home = dataset[(dataset.name_home == team)]
@@ -59,25 +59,27 @@ if __name__=='__main__':
 		
 		home_avg_pp = sum(name_home.pp_home) / len(name_home.pp_home)
 		away_avg_pp = sum(name_away.pp_away) / len(name_away.pp_away)
-		avg_pp = (home_avg_pp + away_avg_pp) / 2
+		team_avg_pp = (home_avg_pp + away_avg_pp) / 2
 
 		home_avg_pe = sum(name_home.pe_home) / len(name_home.pe_home)
 		away_avg_pe = sum(name_away.pe_away) / len(name_away.pe_away)
-		avg_pe = (home_avg_pe + away_avg_pe) / 2
+		team_avg_pe = (home_avg_pe + away_avg_pe) / 2
 
-		pp_pe[avg_pp] = avg_pe
+		all_pp_pe[team_avg_pp] = team_avg_pe
 
-	x = np.array(list(pp_pe.keys())).reshape((-1, 1))
-	y = np.array(list(pp_pe.values()))
+	x = np.array(list(all_pp_pe.keys())).reshape((-1, 1))
+	y = np.array(list(all_pp_pe.values()))
 	model = LinearRegression().fit(x,y)
 	y_pred = model.predict(x)
 	slope = model.coef_
 	intercept = model.intercept_
 	r_sq = model.score(x, y)
 
+	"""
 	results = sm.OLS(y, x).fit()
 	print(results.summary())
 	"""
+
 	print('R-squared:', r_sq)
 
 	plt.scatter(x, y)
@@ -87,4 +89,3 @@ if __name__=='__main__':
 	plt.ylabel('Average points earned per match')
 	plt.legend()
 	plt.show()
-	"""
