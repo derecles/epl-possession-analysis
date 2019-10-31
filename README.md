@@ -35,6 +35,11 @@ I performed this analysis using three separate tools: Python, R, and Google Shee
 
 ## Scraping the data
 
+If you don't want to scrape the data, skip this section. The data is already contained in this file:
+```
+epl_data.csv
+```
+
 **The script scrape.py is not going to stop until it has successfully completed, it is manually interrupted, or there is a network error during execution. As a result of explicit waits, this script will take at least 9.5 hours to complete and will repeatedly open and close Chrome instances. If the script is interrupted, the csv file will be deleted and re-created upon the next run.**
 
 In order to scrape the data, you need to have [Selenium WebDriver](https://www.seleniumhq.org/) for Python installed. Once you are ready, run the following command in the cloned repo:
@@ -66,8 +71,6 @@ This is going to create a csv file that contains the data to be analyzed. These 
 -----------------------------------------------------------
 ```
 
-There are 4940 total matches to be scraped, so there should be 4941 rows in the csv file (including the column labels). The csv included in this repo only has 4940 rows. I don't know where the missing match is, but I don't want to run the script all over again. I will find the match and manually add it.
-
 ## Analyzing the data
 
 In order to see a regression line drawn using Python, run this command:
@@ -90,13 +93,12 @@ In order to see the Google Sheets input data, open this pdf:
 excel_calculations.pdf
 ```
 
-In order to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
+## Things to note
+
+- There are 20 teams that play in a given season.
+- - There are more than 20 data points because after each season, the Premier League relegates the three teams with the fewest points earned down to the [2nd tier](https://www.efl.com/) in the following season. The three teams from the 2nd tier that earned the most points in the 2nd tier are then promoted up to the Premier League the following season.
+- There are 4940 total matches to be scraped, so there should be 4941 rows in the csv file (including the column labels). The csv included in this repo only has 4940 rows. I don't know where the missing match is, but I don't want to run the script all over again. I will find the match and manually add it.
+- In order to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
 ```
 sqlite_epl_data.db
 ```
-
-## Things to note
-
-There are 20 teams that play in a given season.
-
-There are more than 20 data points because after each season, the Premier League relegates the three teams with the fewest points earned down to the [2nd tier](https://www.efl.com/) in the following season. The three teams from the 2nd tier that earned the most points in the 2nd tier are then promoted up to the Premier League the following season.
