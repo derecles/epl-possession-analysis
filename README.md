@@ -106,6 +106,7 @@ It is possible that at some point between the 06/07 season and the 18/19 season,
 Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
 ```
 
-I have plans to further analyze the data:
-- [ ] Analyze on a per-season basis (20 data points)
-- [ ] Analyze on a per-team basis (one data point == one season)
+## To do
+
+- [ ] Analyze on a per-season basis (20 data points per plot, one plot for each of the 13 seasons)
+- [ ] Analyze on a per-team basis (one data point == one season, one plot for each of the 39 teams that have played in the Premier League since possession figures have been tracked)
