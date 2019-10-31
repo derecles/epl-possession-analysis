@@ -35,12 +35,12 @@ I then drew a regression line using three separate tools: Python, R, and Google 
 
 ## Scraping the data
 
-**The script scrape.py is not going to stop until one of the following events occur:**
+***The script scrape.py is not going to stop until one of the following events occur:***
   1. The script has successfully completed execution
   2. The script is manually interrupted during execution
   3. There is a network error during execution
   
-As a result of explicit waits, this script will take at least 9.5 hours to finish executing and will repeatedly open and close Chrome instances. The csv file will always be deleted and created upon each execution.
+As a result of explicit waits, this script will take at least 9.5 hours to finish executing and will repeatedly open and close Chrome instances. ***The csv file will always be deleted and created upon each execution.***
 
 If you don't want to scrape the data, skip to the next section. The data is already contained in the following file:
 ```
