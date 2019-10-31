@@ -80,9 +80,19 @@ In order to see a regression line drawn using R, use [RStudio](https://rstudio.c
 generate_visuals.R
 ```
 
-In order to see ra regression line drawn using Google Sheets, open this pdf:
+In order to see a regression line drawn using Google Sheets, open this pdf:
 ```
 excel_visual.pdf
+```
+
+In order to see the Google Sheets input data, open this pdf:
+```
+excel_calculations.pdf
+```
+
+In order to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
+```
+sqlite_epl_data.db
 ```
 
 ## Things to note
