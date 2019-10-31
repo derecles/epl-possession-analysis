@@ -35,23 +35,25 @@ I then drew a regression line using three separate tools: Python, R, and Google 
 
 ## Scraping the data
 
-If you don't want to scrape the data, skip to the next section. The data is already contained in the following file:
+If you _don't_ want to scrape the data, skip to the next section. The data is already contained in the following file:
 ```
 epl_data.csv
 ```
 
-The script scrape.py creates a csv file containing data on each match played. Data is populated by getting specific values from each Premier League match summary ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
+If you _do_ want to scrape the data, you will need to have [Selenium WebDriver](https://www.seleniumhq.org/) for Python installed. 
+
+The script scrape.py creates a csv file containing data on each match played. Data is populated by getting specific values from each Premier League match ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
 
 As a result of explicit waits, this script will take at least 7.5 hours to finish executing. During this period of time, a single Chrome instance will open for roughly 5.5 seconds and then quit. The interval (and thus the total time required to finish executing the entire script) could be longer depending on your hardware and the strength of your internet connectivity.
 
-***scrape.py is not going to stop until one of the following events occur:***
+scrape.py is not going to stop until one of the following events occur:
   1. The script has successfully completed execution
   2. The script is manually interrupted during execution
   3. The script is automatically interrupted due to persistent network errors
   
-***The csv file will always be deleted and created upon each execution.***
+***IN ORDER TO ENSURE DATA PURITY, THE CSV FILE WILL ALWAYS BE DELETED AND CREATED EACH TIME THE SCRIPT IS EXECUTED.***
 
-In order to scrape the data, you will need to have [Selenium WebDriver](https://www.seleniumhq.org/) for Python installed. Once you are ready, run the following command in the cloned repo:
+Once you are ready, run the following command in the cloned repo:
 ```
 python3 scrape.py
 ```
