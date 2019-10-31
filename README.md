@@ -94,17 +94,13 @@ excel_calculations.pdf
 
 ## Things to note
 
-It is possible that at some point between the 2006/07 season and the 2018/19 season, the Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would not be likely to impact the statistical significance of the model. Also, if there was a change, I wasn't able to find an announcement on their website. You can approximate the possession percentage for Team A playing in a given match as follows:
-```
-Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
-```
+- It is possible that at some point between the 2006/07 season and the 2018/19 season, the Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would not be likely to impact the statistical significance of the model. Also, if there was a change, I wasn't able to find an announcement on their website. You can approximate the possession percentage for Team A playing in a given match as follows:
+  - ``` Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)```
 
-There are 20 teams that play in a given season. There are more than 20 data points because after each season, the Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com/) of the Premier League for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the Premier League to replace the teams that were relegated.
+- There are 20 teams that play in a given season. There are more than 20 data points because after each season, the Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com/) of the Premier League for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the Premier League to replace the teams that were relegated.
 
-If you want to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
-```
-sqlite_epl_data.db
-```
+- If you want to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
+  - ```sqlite_epl_data.db```
 
 ## To do
 
