@@ -1,6 +1,7 @@
 require("ggplot2", "dplyr")
 
 # Initialize a dataframe
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 epl_data <- read.csv(file = "epl_data.csv", header = TRUE, sep = ",")
 
 # Get a vector of unique team names
