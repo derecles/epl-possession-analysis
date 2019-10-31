@@ -1,4 +1,4 @@
-require("ggplot2", "dplyr")
+library("ggplot2", "dplyr")
 
 # Initialize a dataframe
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
