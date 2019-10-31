@@ -35,7 +35,7 @@ I performed the analysis using three separate tools: Python, R, and Google Sheet
 
 ## Scraping the data
 
-**The script scrape.py is not going to stop until it has successfully completed, it is manually interrupted, or there is a network error during execution. As a result of explicit waits, this script will take at least 9.5 hours to complete and will repeatedly open and close Chrome instances. If the script is interrupted, the csv file will be deleted and re-created upon the next run.**
+**The script scrape.py is not going to stop until it has successfully completed, it is manually interrupted, or there is a network error during execution. As a result of explicit waits, this script will take at least 9.5 hours to finish executing and will repeatedly open and close Chrome instances. If the script is interrupted, the csv file will be deleted and re-created upon the next run.**
 
 If you don't want to scrape the data, skip to the next section. The data is already contained in the following file:
 ```
@@ -94,7 +94,7 @@ excel_calculations.pdf
 
 ## Things to note
 
-It is possible that at some point between the 2006/07 season and the 2018/19 season, the Premier League changed its methodology for calculating possession. If there was a change, the individual data points would be unlikely to change by a degree that is statistically significant. (If the calculation did change, I wasn't able to find an announcement.) However, you can approximate the possession percentage for Team A playing in a given match as follows:
+It is possible that at some point between the 2006/07 season and the 2018/19 season, the Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would not be likely to impact the statistical significance of the model. Also, if there was a change, I wasn't able to find an announcement on their website. You can approximate the possession percentage for Team A playing in a given match as follows:
 ```
 Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
 ```
