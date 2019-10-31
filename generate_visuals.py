@@ -73,6 +73,7 @@ if __name__=='__main__':
 	y_pred = model.predict(x)
 	slope = model.coef_
 	intercept = model.intercept_
+	intercept = str(intercept)[1:7]
 	r_sq = model.score(x, y)
 
 	"""
@@ -81,9 +82,10 @@ if __name__=='__main__':
 	"""
 
 	print('R-squared:', r_sq)
+	print('Regression equation: y = {:.4f}x - {}'.format(slope[0], intercept))
 
 	plt.scatter(x, y)
-	plt.plot(x, y_pred, color='red', label='y={:.4f}x{:.4f}'.format(slope[0], intercept))
+	plt.plot(x, y_pred, color='red', label='y = {:.4f}x - {}'.format(slope[0], intercept))
 	plt.title('Possession versus match outcomes')
 	plt.xlabel('Average possession percentage per match')
 	plt.ylabel('Average points earned per match')
