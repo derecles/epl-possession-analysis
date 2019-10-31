@@ -51,7 +51,7 @@ scrape.py is not going to stop until one of the following events occur:
   2. The script is manually interrupted during execution
   3. The script is automatically interrupted due to persistent network errors
   
-***IN ORDER TO ENSURE DATA PURITY, THE CSV FILE WILL ALWAYS BE DELETED AND CREATED EACH TIME THE SCRIPT IS EXECUTED.***
+**IN ORDER TO ENSURE DATA PURITY, THE CSV FILE WILL ALWAYS BE DELETED AND CREATED EACH TIME THE SCRIPT IS EXECUTED!**
 
 Once you are ready, run the following command in the cloned repo:
 ```
