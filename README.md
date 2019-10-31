@@ -40,7 +40,7 @@ If you don't want to scrape the data, skip to the next section. The data is alre
 epl_data.csv
 ```
 
-The script scrape.py creates a csv file containing data on each match played. Data is populated by scraping the [Premier League](https://www.premierleague.com/) match history and appending it to the csv file.
+The script scrape.py creates a csv file containing data on each match played. Data is populated by getting specific values from each Premier League match summary ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
 
 As a result of explicit waits, this script will take at least 7.5 hours to finish executing. During this period of time, a single Chrome instance will open for roughly 5.5 seconds and then quit. The interval (and thus the total time required to finish executing the entire script) could be longer depending on your hardware and the strength of your internet connectivity.
 
