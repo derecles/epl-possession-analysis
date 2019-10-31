@@ -31,7 +31,7 @@ For each team, I have plotted the following:
 
 Each data point represents a single team.
 
-I then drew a regression line using three separate tools: Python, R, and Google Sheets. I arrived at similar regression equations (within a tight margin of error) using each tool independently.
+I then drew a regression line using three separate tools: Python, R, and Google Sheets. I arrived at equivalent regression equations (within a tight margin of error) using each tool independently.
 
 ## Scraping the data
 
