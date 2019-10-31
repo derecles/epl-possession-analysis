@@ -76,18 +76,16 @@ if __name__=='__main__':
 	intercept = str(intercept)[1:7]
 	r_sq = model.score(x, y)
 
-	"""
-	results = sm.OLS(y, x).fit()
-	print(results.summary())
-	"""
-
 	print('R-squared:', r_sq)
 	print('Regression equation: y = {:.4f}x - {}'.format(slope[0], intercept))
 
 	plt.scatter(x, y)
 	plt.plot(x, y_pred, color='red', label='y = {:.4f}x - {}'.format(slope[0], intercept))
-	plt.title('Possession versus match outcomes')
-	plt.xlabel('Average possession percentage per match')
-	plt.ylabel('Average points earned per match')
+	plt.title('Possession vs. Match Outcomes')
+	plt.xlabel('Avg. Possession per Match (%)')
+	plt.xlim(left=40, right=60)
+	plt.xticks(np.arange(40, 61, 5))
+	plt.ylabel('Avg. Points Earned per Match')
+	plt.ylim(bottom=0.0, top=2.5)
 	plt.legend()
 	plt.show()

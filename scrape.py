@@ -85,16 +85,17 @@ def append_match_stats(match, f):
 	f.write('\n')
 	print('...done.')
 
-"""
 if __name__ == '__main__':
 
 	filename = 'epl_data.csv'
 
-	# if os.path.exists(filename):
-		# os.remove(filename)
+	# This 'if' block will delete the newly-created csv file each time the script is run!
+	if os.path.exists(filename):
+		os.remove(filename)
 
 	if not os.path.exists(filename):
 		f = open(filename, 'a+')
+
 	label_str = 'name_home,pp_home,gs_home,pe_home,name_away,pp_away,gs_away,pe_away,match_date\n'
 	f.write(label_str)
 
@@ -122,4 +123,3 @@ if __name__ == '__main__':
 			append_match_stats(base_url + str(match), f)
 
 	f.close()
-"""
