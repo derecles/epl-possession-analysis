@@ -93,14 +93,14 @@ In order to view the regression curve using R, use [RStudio](https://rstudio.com
 generate_visuals.R
 ```
 
-In order to view the regression curve drawn by Google Sheets, open this pdf:
+In order to view the regression curve drawn by Google Sheets, open this file:
 ```
 excel_visual.pdf
 ```
 
-In order to view the Google Sheets input data, open this pdf:
+In order to view the Google Sheets input data, open this file:
 ```
-excel_calculations.pdf
+excel_details.xlsx
 ```
 
 ## Things to note
