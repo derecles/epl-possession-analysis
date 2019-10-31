@@ -13,7 +13,7 @@ I have defined a match outcome as the points earned by a given team in a given m
 There are 3 potential outcomes to each match:
 ```
 ---------------------------------------------------------------------------------------------------
-| Situation                                        | Outcome                                      |
+| **Situation**                                    | **Outcome**                                  |
 ---------------------------------------------------------------------------------------------------
 | Team A scores more goals than Team B             | Team A earns 3 points; Team B earns 0 points |
 ---------------------------------------------------------------------------------------------------
