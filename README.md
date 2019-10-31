@@ -4,7 +4,7 @@ In a given football (soccer) match, is there a relationship between a team's pos
 
 ## Overview
 
-I have analyzed all of the matches played in the [Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19.
+I have analyzed all of the matches played in the [Premier League](https://www.premierleague.com) from 2006/07 to 2018/19.
 
 2006/07 is the earliest season for which possession figures are available on the Premier League website.
 
@@ -40,7 +40,7 @@ If you _don't_ want to scrape the data, skip to the next section. The data is al
 epl_data.csv
 ```
 
-If you _do_ want to scrape the data, you will need to have [Selenium WebDriver](https://www.seleniumhq.org/) for Python installed. 
+If you _do_ want to scrape the data, you will need to have [Selenium WebDriver](https://www.seleniumhq.org) for Python installed. 
 
 The script scrape.py creates a csv file containing data on each match played. Data is populated by getting specific values from each Premier League match ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
 
@@ -88,7 +88,7 @@ In order to view a regression line drawn using Python, run this command:
 python3 generate_visuals.py
 ```
 
-In order to view a regression line drawn using R, use [RStudio](https://rstudio.com/) to run this R script:
+In order to view a regression line drawn using R, use [RStudio](https://rstudio.com) to run this R script:
 ```
 generate_visuals.R
 ```
@@ -110,7 +110,7 @@ excel_calculations.pdf
   Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
   ```
 
-- There are 20 teams that play in a given season. There are more than 20 data points because after each season, the Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com/) of the Premier League for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the Premier League to replace the teams that were relegated.
+- There are 20 teams that play in a given season. Each data point represents a single team. However, there are more than 20 total data points. This is because the Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com) of the Premier League for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the Premier League to replace the teams that were relegated.
 
 - If you want to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
   ```
