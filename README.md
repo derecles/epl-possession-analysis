@@ -4,7 +4,7 @@ In a given football (soccer) match, is having more possession of the ball associ
 
 ## Overview
 
-I have analyzed all matches in the [Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19.
+I have analyzed all matches played in the [Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19.
 
 2006/07 is the earliest season for which possession figures are available on the Premier League website.
 
