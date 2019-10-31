@@ -4,7 +4,9 @@ In a given football match, is having more possession associated with an improved
 
 ## Overview
 
-I have analyzed all matches in the [English Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19. (06/07 is the earliest season in which match-level possession figures are available.)
+I have analyzed all matches in the [English Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19.
+
+2006/07 is the earliest season for which possession figures are available on the Premier League website.
 
 ## Methodology
 
@@ -23,11 +25,17 @@ There are 3 potential outcomes to each match:
 ---------------------------------------------------------------------------------------------------
 ```
 
-For each team, I have plotted the average possession per match across all matches in all seasons as the independent variable and the average points earned across all matches in all seasons as the dependent variable. A single data points represents a single team.
+For each team, I have plotted the following:
+- Independent variable: Average possession per match across all matches in all seasons
+- Dependent variable: Average points earned across all matches in all seasons as the dependent variable
 
-I performed this analysis using three separate tools: Python, R, and Google Sheets. I was able to draw the exact same regression line (within a margin of error) using each tool independently.
+A single data point represents a single team.
+
+I performed this analysis using three separate tools: Python, R, and Google Sheets. I was able to draw a comparable regression line (within a margin of error) using each tool independently.
 
 ## Scraping the data
+
+**The script scrape.py is not going to stop until it has successfully completed, it is manually interrupted, or there is a network error during execution. As a result of explicit waits, this script will take at least 9.5 hours to complete and will repeatedly open and close Chrome instances. If the script is interrupted, the csv file will be deleted and re-created upon the next run.**
 
 In order to scrape the data, you need to have [Selenium WebDriver](https://www.seleniumhq.org/) for Python. Once you are ready, run the following command in the cloned repo:
 
@@ -37,6 +45,8 @@ python3 scrape.py
 
 This is going to create a csv file that contains the data to be analyzed. These will be the column labels:
 ```
+-----------------------------------------------------------
+| Label     | Meaning                                     |
 -----------------------------------------------------------
 | name_home | The name of the home team                   |
 -----------------------------------------------------------
@@ -57,10 +67,8 @@ This is going to create a csv file that contains the data to be analyzed. These 
 
 ```
 
-**This script is not going to stop until it is manually interrupted or there is a network error. If the script is interrupted, the csv file will be deleted and re-created upon the next run.**
-
 ## Things to note
 
 There are 20 teams that play in a given season.
 
-There are more than 20 data points because after each season, the English Premier League relegates the three teams with the fewest points earned to the [2nd tier](https://www.efl.com/) of English football in the following season. The three teams from the 2nd tier that earned the most points in the 2nd tier are then promoted to the Premier League in the following season.
+There are more than 20 data points because after each season, the English Premier League relegates the three teams with the fewest points earned to the [2nd tier](https://www.efl.com/) of English football in the following season. The three teams from the 2nd tier that earned the most points in the 2nd tier are then promoted to the Premier League the following season.
