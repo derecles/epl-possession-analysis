@@ -1,6 +1,6 @@
 # epl-possession-analysis
 
-In a given football match, is having more possession associated with an improved match outcome?
+In a given football (soccer) match, is having more possession associated with an improved match outcome?
 
 ## Overview
 
