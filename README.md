@@ -4,7 +4,7 @@ In a given football (soccer) match, is having more possession of the ball associ
 
 ## Overview
 
-I have analyzed all matches played in the [Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19.
+I have analyzed all of the matches played in the [Premier League](https://www.premierleague.com/) from 2006/07 to 2018/19.
 
 2006/07 is the earliest season for which possession figures are available on the Premier League website.
 
@@ -12,10 +12,10 @@ I have analyzed all matches played in the [Premier League](https://www.premierle
 
 I have defined a match outcome as the points earned by a given team in a given match.
 
-There are 3 potential outcomes to each match:
+There are 3 potential outcomes to a match based on the number of goals scored by each team:
 ```
 ---------------------------------------------------------------------------------------------------
-| Situation                                        | Outcome                                      |
+| Goals Scored                                     | Outcome                                      |
 ---------------------------------------------------------------------------------------------------
 | Team A scores more goals than Team B             | Team A earns 3 points; Team B earns 0 points |
 ---------------------------------------------------------------------------------------------------
@@ -105,3 +105,7 @@ It is possible that at some point between the 06/07 season and the 18/19 season,
 ```
 Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
 ```
+
+I have plans to further analyze the data:
+- [ ] Analyze on a per-season basis (20 data points)
+- [ ] Analyze on a per-team basis (one data point == one season)
