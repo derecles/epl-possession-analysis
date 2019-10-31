@@ -47,63 +47,63 @@ If you _do_ want to scrape the data, you need to have [Selenium WebDriver](https
 python3 scrape.py
 ```
 
-This is going to create a csv file that contains the data to be analyzed. These will be the column labels:
+This is going to create a csv file named epl_data.csv that contains the data to be analyzed. These will be the column labels:
 ```
------------------------------------------------------------
-| Label     | Meaning                                     |
------------------------------------------------------------
-| name_home | The name of the home team                   |
------------------------------------------------------------
-| pp_home   | The possession percentage for the home team |
------------------------------------------------------------
-| gs_home   | The goals scored by the home team           |
------------------------------------------------------------
-| pe_home   | The points earned by the home team          |
------------------------------------------------------------
-| name_away | The name of the away team                   |
------------------------------------------------------------
-| pp_away   | The possession percentage for the away team |
------------------------------------------------------------
-| gs_away   | The goals scored by the away team           |
------------------------------------------------------------
-| pe_away   | The points earned by the away team          |
------------------------------------------------------------
+--------------------------------------------------------------
+| Column Label | Meaning                                     |
+--------------------------------------------------------------
+| name_home    | The name of the home team                   |
+--------------------------------------------------------------
+| pp_home      | The possession percentage for the home team |
+--------------------------------------------------------------
+| gs_home      | The goals scored by the home team           |
+--------------------------------------------------------------
+| pe_home      | The points earned by the home team          |
+--------------------------------------------------------------
+| name_away    | The name of the away team                   |
+--------------------------------------------------------------
+| pp_away      | The possession percentage for the away team |
+--------------------------------------------------------------
+| gs_away      | The goals scored by the away team           |
+--------------------------------------------------------------
+| pe_away      | The points earned by the away team          |
+--------------------------------------------------------------
 ```
 
 ## Analyzing the data
 
-In order to see a regression line drawn using Python, run this command:
+In order to view a regression line drawn using Python, run this command:
 ```
 python3 generate_visuals.py
 ```
 
-In order to see a regression line drawn using R, use [RStudio](https://rstudio.com/) to run this R script:
+In order to view a regression line drawn using R, use [RStudio](https://rstudio.com/) to run this R script:
 ```
 generate_visuals.R
 ```
 
-In order to see a regression line drawn using Google Sheets, open this pdf:
+In order to view a regression line drawn using Google Sheets, open this pdf:
 ```
 excel_visual.pdf
 ```
 
-In order to see the Google Sheets input data, open this pdf:
+In order to view the Google Sheets input data, open this pdf:
 ```
 excel_calculations.pdf
 ```
 
 ## Things to note
 
-There are 20 teams that play in a given season. There are more than 20 data points because after each season, the Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com/) of the Premier League for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the Premier League to replace the teams that were relegated.
-
-In order to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
-```
-sqlite_epl_data.db
-```
-
-It is possible that at some point between the 06/07 season and the 18/19 season, the Premier League changed its methodology for calculating possession. If there was a change, the individual data points would be unlikely to change by a degree that is statistically significant. (If the calculation did change, I wasn't able to find an announcement.) You can approximate the possession percentage for Team A playing in a given match as follows:
+It is possible that at some point between the 2006/07 season and the 2018/19 season, the Premier League changed its methodology for calculating possession. If there was a change, the individual data points would be unlikely to change by a degree that is statistically significant. (If the calculation did change, I wasn't able to find an announcement.) However, you can approximate the possession percentage for Team A playing in a given match as follows:
 ```
 Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
+```
+
+There are 20 teams that play in a given season. There are more than 20 data points because after each season, the Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com/) of the Premier League for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the Premier League to replace the teams that were relegated.
+
+If you want to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
+```
+sqlite_epl_data.db
 ```
 
 ## To do
