@@ -83,17 +83,17 @@ This is going to create a csv file named epl_data.csv that contains the data to 
 
 ## Analyzing the data
 
-In order to view a regression line drawn using Python, run this command:
+In order to view the regression curve using Python, run this command:
 ```
 python3 generate_visuals.py
 ```
 
-In order to view a regression line drawn using R, use [RStudio](https://rstudio.com) to run this R script:
+In order to view the regression curve using R, use [RStudio](https://rstudio.com) to run this R script:
 ```
 generate_visuals.R
 ```
 
-In order to view a regression line drawn using Google Sheets, open this pdf:
+In order to view the regression curve drawn by Google Sheets, open this pdf:
 ```
 excel_visual.pdf
 ```
