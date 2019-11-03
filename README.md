@@ -1,12 +1,12 @@
 # epl-possession-analysis
 
-In a given football (soccer) match, is there a relationship between a team's possession of the ball and the match outcome?
+In a given professional soccer match, is there a relationship between [English Premier League (EPL)](https://www.premierleague.com) teams' possession of the ball and their average match outcomes?
 
 ## Overview
 
-I have analyzed all of the matches played in the [Premier League](https://www.premierleague.com) from 2006/07 to 2018/19.
+I have analyzed all of the matches played in the English Premier League (EPL) from 2006/07 to 2018/19.
 
-2006/07 is the earliest season for which possession figures are available on the Premier League website.
+2006/07 is the earliest season for which possession figures are available on the EPL website.
 
 ## Methodology
 
@@ -42,7 +42,7 @@ epl_data.csv
 
 If you _do_ want to scrape the data, you will need to have [Selenium WebDriver](https://www.seleniumhq.org) for Python installed. 
 
-The script scrape.py creates a csv file containing data on each match played. Data is populated by getting specific values from each Premier League match ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
+The script scrape.py creates a csv file containing data on each match played. Data is populated by getting specific values from each match played in the EPL ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
 
 As a result of explicit waits, this script will take at least 7.5 hours to finish executing. During this period of time, a single Chrome instance will open for roughly 5.5 seconds and then quit. The interval (and thus the total time required to finish executing the entire script) could be longer depending on your hardware and the strength of your internet connectivity.
 
@@ -105,12 +105,12 @@ excel_details.xlsx
 
 ## Things to note
 
-- It is possible that at some point between the 2006/07 season and the 2018/19 season, the Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would be unlikely to have a statistically significant impact. Additionally, if there _was_ a change, I wasn't able to find an announcement on their website. FYI: you can approximate the possession percentage for Team A playing in a given match as follows:
+- It is possible that at some point between the 2006/07 season and the 2018/19 season, the English Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would be unlikely to have a statistically significant impact. Additionally, if there _was_ a change, I wasn't able to find an announcement on their website. FYI: you can approximate the possession percentage for Team A playing in a given match as follows:
   ```
   Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
   ```
 
-- There are 20 teams that play in a given season. Each data point represents a single team. However, there are more than 20 total data points. This is because the Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com) of the Premier League for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the Premier League to replace the teams that were relegated.
+- There are 20 teams that play in a given season. Each data point represents a single team. However, there are more than 20 total data points. This is because the English Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com) for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the English Premier League to replace the teams that were relegated.
 
 - If you want to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
   ```
