@@ -1,10 +1,10 @@
 # epl-possession-analysis
 
-In a given professional soccer match, is there a relationship between [English Premier League (EPL)](https://www.premierleague.com) teams' possession of the ball and their match outcomes?
+In a professional soccer match, is there a relationship between [English Premier League (EPL)](https://www.premierleague.com) teams' possession of the ball and their match outcomes?
 
 ## Overview
 
-I have analyzed all of the matches played in the English Premier League (EPL) from 2006/07 to 2018/19.
+I have analyzed all of the matches played in the English Premier League from 2006/07 to 2018/19.
 
 2006/07 is the earliest season for which possession figures are available on the EPL website.
 
@@ -42,9 +42,9 @@ epl_data.csv
 
 If you _do_ want to scrape the data, you will need to have [Selenium WebDriver](https://www.seleniumhq.org) for Python installed. 
 
-The script scrape.py creates a csv file containing data on each match played. Data is populated by getting specific values from each match played in the EPL ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
+The script scrape.py creates a csv file containing data on each match played. Data is populated by fetching specific values from each match played in the English Premier League ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
 
-As a result of explicit waits, this script will take at least 7.5 hours to finish executing. During this period of time, a single Chrome instance will open for roughly 5.5 seconds and then quit. The interval (and thus the total time required to finish executing the entire script) could be longer depending on your hardware and the strength of your internet connectivity.
+As a result of explicit waits, this script will take at least 7.5 hours to finish executing. During this period of time, every 6 seconds there will be a repeating interval where a single Chrome instance will launch and then quit. The interval (and thus the total time required to finish executing the entire script) could be longer depending on your hardware and the strength of your internet connectivity.
 
 scrape.py is not going to stop until one of the following events occur:
   1. The script has successfully completed execution
