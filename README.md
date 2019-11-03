@@ -1,4 +1,4 @@
-# epl-possession-analysis
+# EPL Possession Analysis
 
 In a professional soccer match, is there a relationship between [English Premier League (EPL)](https://www.premierleague.com) teams' possession of the ball and their match outcomes?
 
