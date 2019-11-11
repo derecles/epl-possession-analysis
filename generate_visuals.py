@@ -52,6 +52,7 @@ teams = {
 all_pp_pe = {}
 last_season_pp_pe = {}
 
+"""
 # temp = teams.values()
 # print(temp)
 
@@ -68,8 +69,8 @@ for x in teams.values():
 
 	# temp = x['match_date'].astype('datetime64')
 	# print(temp.dtypes)
-
 """
+
 for team, dataset in teams.items():
 	name_home = dataset[(dataset.name_home == team)]
 	name_away = dataset[(dataset.name_away == team)]
@@ -106,4 +107,3 @@ plt.ylabel('Avg. Points Earned per Match')
 plt.ylim(bottom=0.0, top=2.5)
 plt.legend()
 plt.show()
-"""
