@@ -25,8 +25,9 @@ for (team in team_names) {
 
 # Display scatterplot with SLS line
 model <- lm(all_pe ~ all_pp)
-plot(all_pp, all_pe, main = "Possession vs. Match Outcomes", xlab = "Average Possession (%)", ylab = "Average Points Earned per Match")
-abline(model, col = "blue")
+par(lwd = 2)
+plot(all_pp, all_pe, main = "Possession vs. Match Outcomes", xlab = "Average Possession per Match (%)", ylab = "Average Points Earned per Match", xlim = c(40, 60), ylim = c(0, 2.5), col = "blue")
+abline(model, col = "red")
 
 # Display equation of SLS line on scatterplot
 cf <- round(coef(model), 4)
