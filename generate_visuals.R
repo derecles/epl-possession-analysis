@@ -30,8 +30,9 @@ plot(all_pp, all_pe, main = "Possession vs. Match Outcomes", xlab = "Average Pos
 abline(model, col = "red")
 
 # Display equation of SLS line on scatterplot
-cf <- round(coef(model), 4)
-eq <- paste0("y = ", abs(cf[2]), "x ", ifelse(sign(cf[1]) == 1, " + ", " - "), abs(cf[1]))
+coeff_grad <- round(coef(model)[2], 4)
+coeff_int <- round(coef(model)[1], 2)
+eq <- paste0("y = ", abs(coeff_grad), "x ", ifelse(sign(coeff_int) == 1, " + ", " - "), abs(coeff_int))
 mtext(eq, side = 3, line = -2)
 
 # Display regression statistics

@@ -92,14 +92,14 @@ model = LinearRegression().fit(x,y)
 y_pred = model.predict(x)
 slope = model.coef_
 intercept = model.intercept_
-intercept = str(intercept)[1:7]
+intercept = str(intercept)[1:13]
 r_sq = model.score(x, y)
 
 print('R-squared:', r_sq)
-print('Regression equation: y = {:.4f}x - {}'.format(slope[0], intercept))
+print('Regression equation: y = {:.10f}x - {}'.format(slope[0], intercept))
 
 plt.scatter(x, y)
-plt.plot(x, y_pred, color='red', label='y = {:.4f}x - {}'.format(slope[0], intercept))
+plt.plot(x, y_pred, color='red', label='y = {:.4f}x - {}'.format(slope[0], intercept[0:4]))
 plt.title('Possession vs. Match Outcomes')
 plt.xlabel('Average Possession per Match (%)')
 plt.xlim(left=40, right=60)
