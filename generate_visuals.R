@@ -17,14 +17,21 @@ for (team in team_names) {
   away_avg_pp <- mean(epl_data[epl_data$name_away == team, "pp_away"])
   home_avg_pe <- mean(epl_data[epl_data$name_home == team, "pe_home"])
   away_avg_pe <- mean(epl_data[epl_data$name_away == team, "pe_away"])
-  team_avg_pp <- mean(home_avg_pp, away_avg_pp)
-  team_avg_pe <- mean(home_avg_pe, away_avg_pe)
+  team_avg_pp <- (home_avg_pp + away_avg_pp) / 2
+  team_avg_pe <- (home_avg_pe + away_avg_pe) / 2
   all_pp <- c(all_pp, team_avg_pp)
   all_pe <- c(all_pe, team_avg_pe)
 }
 
-# Display a graph
+# Display scatterplot with SLS line
 model <- lm(all_pe ~ all_pp)
-plot(all_pp, all_pe, xlab = "Average Possession (%)", ylab = "Average Points")
+plot(all_pp, all_pe, main = "Possession vs. Match Outcomes", xlab = "Average Possession (%)", ylab = "Average Points Earned per Match")
 abline(model, col = "blue")
+
+# Display equation of SLS line on scatterplot
+cf <- round(coef(model), 4)
+eq <- paste0("y = ", abs(cf[2]), "x ", ifelse(sign(cf[1]) == 1, " + ", " - "), abs(cf[1]))
+mtext(eq, side = 3, line = -2)
+
+# Display regression statistics
 summary(model)
