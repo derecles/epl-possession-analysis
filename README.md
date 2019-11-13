@@ -1,10 +1,10 @@
 # EPL Possession Analysis
 
-In professional football (soccer), is there a relationship between [English Premier League (EPL)](https://www.premierleague.com) teams' possession of the ball and their match outcomes?
+In professional football (soccer), is there a relationship between a team's possession of the ball and their match outcomes?
 
 ## Overview
 
-I have analyzed all of the matches played in the English Premier League from the 2006/07 season to the 2018/19 season.
+I have analyzed all of the matches played in the [English Premier League (EPL)](https://www.premierleague.com/) from the 2006/07 season to the 2018/19 season.
 
 2006/07 is the earliest season in which possession figures are available on the EPL website.
 
