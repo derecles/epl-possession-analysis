@@ -18,7 +18,7 @@ I defined a match outcome as the number of points earned by a given team in a gi
 | Team B scores more goals than Team A             | Team A earns 0 points; Team B earns 3 points |
 | Team A and Team B score the same number of goals | Team A earns 1 point;  Team B earns 1 point  |
 
-Each of the 20 teams in the English Premier League begin each season with zero points. The team that accumulates the most points by the end of the season is the champion. (There are no playoffs.)
+Each of the 20 teams in the English Premier League begins the season with zero points. The team that accumulates the most points by the end of the season is the champion. (There are no playoffs.)
 
 For each team, I have plotted the following:
 - Independent variable: The given team's average ball possession percentage per match (across every match played in every season)
