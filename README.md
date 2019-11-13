@@ -10,9 +10,7 @@ I have analyzed all of the matches played in the [English Premier League (EPL)](
 
 ## Methodology
 
-I defined a match outcome as the points earned by a given team in a given match. See [here](https://en.wikipedia.org/wiki/Premier_League#Competition_format) for more information.
-
-The outcome of a match is based on the number of goals scored by each team:
+I defined a match outcome as the points earned by a given team in a given match. As per the [official rules](https://www.premierleague.com/premier-league-explained), the outcome of a match is based on the number of goals scored by each team:
 ```
 ---------------------------------------------------------------------------------------------------
 | Goals Scored                                     | Outcome                                      |
@@ -25,7 +23,7 @@ The outcome of a match is based on the number of goals scored by each team:
 ---------------------------------------------------------------------------------------------------
 ```
 
-All 20 teams in the English Premier League begin the season with zero points. The team that accumulates the most points by the end of a given 38-match season is the champion. (There are no playoffs.)
+There are 20 teams in the English Premier League and they each begin the season with zero points. The team that accumulates the most points by the end of the given season is the champion. (There are no playoffs.)
 
 For each team, I have plotted the following:
 - Independent variable: The given team's average ball possession percentage per match (across every match played in every season)
