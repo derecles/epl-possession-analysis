@@ -10,7 +10,7 @@ I have analyzed all of the matches played in the [English Premier League (EPL)](
 
 ## Methodology
 
-I defined a match outcome as the points earned by a given team in a given match. As per the [official rules](https://www.premierleague.com/premier-league-explained), the outcome of a match is based on the number of goals scored by each team:
+I defined a match outcome as the number of points earned by a given team in a given match. As per the [official rules](https://www.premierleague.com/premier-league-explained), the outcome of a match is based on the number of goals scored by each team:
 ```
 ---------------------------------------------------------------------------------------------------
 | Goals Scored                                     | Outcome                                      |
