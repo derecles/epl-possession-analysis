@@ -49,7 +49,7 @@ scrape.py
 
 Data is populated by fetching specific values from each match played in the English Premier League ([example](https://www.premierleague.com/match/38687)) and appending it to the csv file.
 
-As a result of explicit waits, this script will take at least 7.5 hours to finish executing. During this period of time, there will be a repeating 6-second interval where a single Chrome instance will launch and then quit. The duration of the interval (and thus the total time required to finish executing the entire script) may be longer depending on your hardware and the strength of your internet connectivity.
+As a result of explicit waits, this script will take at least 7.5 hours to finish executing. During this period of time, there will be a repeating interval of approximately 6 seconds during which a single Chrome instance will launch and then quit. The duration of the interval (and thus the total time required to finish executing the entire script) may be longer depending on your hardware and the strength of your internet connectivity.
 
 scrape.py is not going to stop running until one of the following events occur:
   1. The script has successfully completed execution
