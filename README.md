@@ -23,7 +23,7 @@ I defined a match outcome as the number of points earned by a given team in a gi
 ---------------------------------------------------------------------------------------------------
 ```
 
-There are 20 teams in the English Premier League and they each begin any given season with zero points. The team that accumulates the most points by the end of the given season is the champion. (There are no playoffs.)
+Each of the 20 teams in the English Premier League begin each season with zero points. The team that accumulates the most points by the end of the season is the champion. (There are no playoffs.)
 
 For each team, I have plotted the following:
 - Independent variable: The given team's average ball possession percentage per match (across every match played in every season)
@@ -51,7 +51,7 @@ scrape.py is not going to stop running until one of the following events occur:
   2. The script is manually interrupted during execution
   3. The script is automatically interrupted due to persistent network errors
 
-**It is highly advisable to avoid interrupting scrape.py during execution because the csv file will always be deleted and created each time the script is executed. This is to ensure data purity.**
+**In order to ensure data purity, the csv file will always be deleted and re-created each time the script is executed. It is therefore advised to avoid interrupting scrape.py during execution.**
 
 Once you are ready, run the following command in the cloned repo:
 ```
