@@ -13,7 +13,7 @@ I have analyzed all of the matches played in the [English Premier League (EPL)](
 I defined a match outcome as the number of points earned by a given team in a given match. As per the [official rules](https://www.premierleague.com/premier-league-explained), the outcome of a match is based on the number of goals scored by each team:
 
 | Goals Scored                                     | Outcome                                      |
----------------------------------------------------------------------------------------------------
+-------------------------------------------------- | ----------------------------------------------
 | Team A scores more goals than Team B             | Team A earns 3 points; Team B earns 0 points |
 | Team B scores more goals than Team A             | Team A earns 0 points; Team B earns 3 points |
 | Team A and Team B score the same number of goals | Team A earns 1 point;  Team B earns 1 point  |
