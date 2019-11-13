@@ -30,7 +30,7 @@ I generated regression curves using three separate tools: Python, R, and Google 
 
 ## Scraping the data
 
-If you _don't_ want to scrape the data, skip to the next section. The data is already contained in `epl_data.csv`
+If you _don't_ want to scrape the data, skip to the [next section](https://github.com/dereknugroho/epl-possession-analysis/blob/master/README.md#analyzing-the-data). The data is already contained in `epl_data.csv`
 
 If you _do_ want to scrape the data, you will need to have [Selenium WebDriver](https://www.seleniumhq.org) for Python installed. 
 
