@@ -28,12 +28,12 @@ The 3 potential outcomes to a match are based on the number of goals scored by e
 All 20 teams in the English Premier League begin the season with zero points. The team that accumulates the most points by the end of the 38-match season is the champion. (There are no playoffs.)
 
 For each team, I have plotted the following:
-- Independent variable: The given team's average ball possession percentage per match across every match played in every season
-- Dependent variable: The given team's average points earned per match across every match played in every season
+- Independent variable: The given team's average ball possession percentage per match (across every match played in every season)
+- Dependent variable: The given team's average points earned per match (across every match played in every season)
 
 Each data point represents a single team.
 
-I calculated regression curves using three separate tools: Python, R, and Google Sheets. The estimated regression coefficients were consistent across all three tools.
+I generated regression curves using three separate tools: Python, R, and Google Sheets. The estimated regression coefficients were consistent across all three tools.
 
 ## Scraping the data
 
