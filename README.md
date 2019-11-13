@@ -12,15 +12,13 @@ I have analyzed all of the matches played in the [English Premier League (EPL)](
 
 I defined a match outcome as the number of points earned by a given team in a given match. As per the [official rules](https://www.premierleague.com/premier-league-explained), the outcome of a match is based on the number of goals scored by each team:
 ```
----------------------------------------------------------------------------------------------------
-| GOALS SCORED                                     | OUTCOME                                      |
+
+| Goals Scored                                     | Outcome                                      |
 ---------------------------------------------------------------------------------------------------
 | Team A scores more goals than Team B             | Team A earns 3 points; Team B earns 0 points |
----------------------------------------------------------------------------------------------------
 | Team B scores more goals than Team A             | Team A earns 0 points; Team B earns 3 points |
----------------------------------------------------------------------------------------------------
 | Team A and Team B score the same number of goals | Team A earns 1 point;  Team B earns 1 point  |
----------------------------------------------------------------------------------------------------
+
 ```
 
 Each of the 20 teams in the English Premier League begin each season with zero points. The team that accumulates the most points by the end of the season is the champion. (There are no playoffs.)
