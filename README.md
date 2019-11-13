@@ -23,7 +23,7 @@ I defined a match outcome as the points earned by a given team in a given match.
 ---------------------------------------------------------------------------------------------------
 ```
 
-There are 20 teams in the English Premier League and they each begin the season with zero points. The team that accumulates the most points by the end of the given season is the champion. (There are no playoffs.)
+There are 20 teams in the English Premier League and they each begin any given season with zero points. The team that accumulates the most points by the end of the given season is the champion. (There are no playoffs.)
 
 For each team, I have plotted the following:
 - Independent variable: The given team's average ball possession percentage per match (across every match played in every season)
