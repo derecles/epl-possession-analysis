@@ -115,12 +115,12 @@ img/regression_curve_GS.png
 
 ## Things to note
 
-- It is possible that at some point between the 2006/07 season and the 2018/19 season, the English Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would be unlikely to have a statistically significant impact. Additionally, if there _was_ a change, I wasn't able to find an announcement on their website. FYI: you can approximate the possession percentage for Team A (in a given match) as follows:
+- It is possible that at some point between the 2006/07 season and the 2018/19 season, the English Premier League changed its methodology for calculating possession. If there was a change in methodology, the change in input would be unlikely to have a statistically significant impact. Additionally, if there _was_ a change, I wasn't able to find an announcement on their website. You can calculate the approximate possession percentage for a team in a given match as follows:
   ```
   Possession percentage for Team A = Passes completed by Team A / (Passes completed by Team A + Passes completed by Team B)
   ```
 
-- There are 20 teams that play in a given season. Each data point represents a single team. However, there are more than 20 total data points. This is because the English Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com) for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the English Premier League to replace the teams that were relegated.
+- There are 20 teams that play in a given season. Each data point represents a single team. However, there are 39 total data points. This is because the English Premier League relegates the 3 teams with the fewest points down to the [2nd tier](https://www.efl.com) for the following season. The 3 teams from the 2nd tier that earned the most points in the 2nd tier are promoted up to the English Premier League to replace the 3 teams that were relegated. Some teams have never been relegated. Some teams have been relegated but promoted the following season. See [here](https://www.premierleague.com/premier-league-explained) for the official rules.
 
 - If you want to play around with the raw data in a database, import this file to [sqlite3](https://www.sqlite.org/index.html) (recommended):
   ```
