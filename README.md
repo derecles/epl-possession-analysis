@@ -59,27 +59,17 @@ $> python3 scrape.py
 ```
 
 This is going to create a csv file named epl_data.csv that contains the data to be analyzed. These will be the column labels:
-```
---------------------------------------------------------------
-| COLUMN LABEL | MEANING                                     |
---------------------------------------------------------------
+
+| Column Label | Meaning                                     |
+-------------- | ---------------------------------------------
 | name_home    | The name of the home team                   |
---------------------------------------------------------------
 | pp_home      | The possession percentage for the home team |
---------------------------------------------------------------
 | gs_home      | The goals scored by the home team           |
---------------------------------------------------------------
 | pe_home      | The points earned by the home team          |
---------------------------------------------------------------
 | name_away    | The name of the away team                   |
---------------------------------------------------------------
 | pp_away      | The possession percentage for the away team |
---------------------------------------------------------------
 | gs_away      | The goals scored by the away team           |
---------------------------------------------------------------
 | pe_away      | The points earned by the away team          |
---------------------------------------------------------------
-```
 
 ## Analyzing the data
 
