@@ -51,27 +51,6 @@ teams = {
 
 all_pp_pe = {}
 
-"""
-last_season_pp_pe = {}
-
-# temp = teams.values()
-# print(temp)
-
-i = 0
-for x in teams.values():
-	# print(x.dtypes)
-	print('XXXXXXXXXXXXXXXXXXXXX', i)
-	i += 1
-	print(x['match_date'])
-
-	# if pd.to_datetime(x['match_date']) == '12/05/2019':
-	# if x['match_date'].astype('datetime64') == '12/05/2019':
-		# print(x)
-
-	# temp = x['match_date'].astype('datetime64')
-	# print(temp.dtypes)
-"""
-
 for team, dataset in teams.items():
 	name_home = dataset[(dataset.name_home == team)]
 	name_away = dataset[(dataset.name_away == team)]
