@@ -40,7 +40,7 @@ Data is populated by fetching specific values from each match played in the Engl
 
 In order to avoid getting IP banned from the EPL website, I have used explicit waits when fetching the data from their website. As a result, `scrape.py` will take at least 7.5 hours to finish executing. During this period of time, there will be a repeating interval of approximately 6 seconds during which a single Chrome instance will launch and then terminate. The duration of the interval (and thus the total time required to finish executing the entire script) may be longer depending on your hardware and the strength of your internet connectivity.
 
-`scrape.py` is not going to stop running until one of the following events occur:
+`scrape.py` is not going to stop running until one of the following events occurs:
   1. The script has successfully completed execution
   2. The script is manually interrupted during execution
   3. The script is automatically interrupted due to persistent network errors
